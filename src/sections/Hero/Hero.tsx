@@ -22,7 +22,7 @@ const Hero = () => {
           viewBox="0 0 150 3"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ display: "block", marginTop: "-0.5rem" }}
+          style={{ display: "block" }}
         >
           <path d="M0 1.5H149.299" stroke="#FFD60A" strokeWidth="3" />
         </svg>
