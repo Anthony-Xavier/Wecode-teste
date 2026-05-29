@@ -7,9 +7,9 @@ const Hero = () => {
   return (
     <section className="hero">
       <img src={heroBg} alt="Hero background" className="hero__bg" />
-
-      <div className="hero__content">
-        <img src={sol} alt="" className="hero__sol" />
+      <img src={sol} alt="" className="hero__sol" />
+      {/* Bloco superior: título */}
+      <div className="hero__content-top">
         <span className="hero__drop-tag">DROP 04</span>
         <h1 className="hero__title">
           pôr-do-sol
@@ -24,9 +24,12 @@ const Hero = () => {
           xmlns="http://www.w3.org/2000/svg"
           style={{ display: "block", marginTop: "-0.5rem" }}
         >
-          <path d="M0 1.5H149.299" stroke="#FFD60A" stroke-width="3" />
+          <path d="M0 1.5H149.299" stroke="#FFD60A" strokeWidth="3" />
         </svg>
+      </div>
 
+      {/* Bloco inferior: produto */}
+      <div className="hero__content-bottom">
         <h3 className="hero__subtitle">12 peças. tudo limitado.</h3>
         <p className="hero__description">
           friozinho de junho. desenhada com referências do skate cores quentes,

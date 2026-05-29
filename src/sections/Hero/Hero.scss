@@ -7,6 +7,14 @@
   min-height: 500px;
   overflow: hidden;
 
+  @media (max-width: $breakpoint-mobile) {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__bg {
     position: absolute;
     inset: 0;
@@ -17,21 +25,35 @@
     z-index: 0;
   }
 
-  &__content {
+  &__content-top {
     position: absolute;
-    right: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 420px;
+    right: 8rem;
+    top: 14%;
+    max-width: 400px;
     z-index: 1;
 
     @media (max-width: $breakpoint-mobile) {
-      right: 1.5rem;
-      left: 1.5rem;
-      max-width: 100%;
+      position: relative;
       top: auto;
-      bottom: 5rem;
-      transform: none;
+      right: auto;
+      max-width: 100%;
+      padding: 5rem 1.5rem 1rem;
+    }
+  }
+
+  &__content-bottom {
+    position: absolute;
+    right: 3rem;
+    bottom: 12%;
+    max-width: 400px;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-mobile) {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      max-width: 100%;
+      padding: 0 1.5rem 1rem;
     }
   }
 
@@ -52,12 +74,18 @@
 
   &__sol {
     position: absolute;
-    top: -20px;
-    right: 270px;
-    width: 120px;
+    top: 12%;
+    right: 20rem;
+    width: 122px;
     height: auto;
     z-index: 0;
     pointer-events: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 60px;
+      top: 5rem;
+      right: 1rem;
+    }
   }
 
   &__title {
@@ -81,15 +109,14 @@
     font-weight: 500;
     font-family: "Inter", sans-serif;
     color: $color-black;
-    margin: 0.8rem 0;
+    margin: 0.8rem 0 0;
   }
 
   &__subtitle {
     font-size: 22px;
     font-weight: 700;
-    font-style: bold;
     color: $color-black;
-    margin: 14rem 0 0;
+    margin: 0 0 0.5rem;
   }
 
   &__description {
@@ -128,7 +155,12 @@
     z-index: 1;
 
     @media (max-width: $breakpoint-mobile) {
-      padding: 0 1rem;
+      position: relative;
+      bottom: auto;
+      padding: 1rem 1.5rem 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
     }
   }
 
@@ -138,7 +170,7 @@
     color: $color-black;
 
     @media (max-width: $breakpoint-mobile) {
-      font-size: 0.8rem;
+      font-size: 14px;
     }
   }
 
@@ -146,10 +178,10 @@
     font-size: 24px;
     font-weight: 500;
     color: $color-purple;
-    margin-right: 34rem;
 
     @media (max-width: $breakpoint-mobile) {
-      display: none;
+      font-size: 13px;
+      display: block;
     }
   }
 
@@ -158,9 +190,11 @@
     font-weight: 700;
     font-family: "Inter", sans-serif;
     color: #6b6b68;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 
     @media (max-width: $breakpoint-mobile) {
-      display: none;
+      font-size: 11px;
+      display: block;
     }
   }
 }
