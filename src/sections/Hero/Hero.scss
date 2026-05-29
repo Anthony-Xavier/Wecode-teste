@@ -92,7 +92,7 @@
     position: relative;
     z-index: 1;
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 100%;
     color: $color-black;
     margin: 0 0 0.3rem;
@@ -107,7 +107,6 @@
     font-style: italic;
     font-size: 20px;
     font-weight: 500;
-    font-family: "Inter", sans-serif;
     color: $color-black;
     margin: 0.8rem 0 0;
   }
@@ -178,6 +177,8 @@
     font-size: 24px;
     font-weight: 500;
     color: $color-purple;
+    left: 50%;
+    transform: translateX(-85%);
 
     @media (max-width: $breakpoint-mobile) {
       font-size: 13px;

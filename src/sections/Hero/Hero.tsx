@@ -8,7 +8,6 @@ const Hero = () => {
     <section className="hero">
       <img src={heroBg} alt="Hero background" className="hero__bg" />
       <img src={sol} alt="" className="hero__sol" />
-      {/* Bloco superior: título */}
       <div className="hero__content-top">
         <span className="hero__drop-tag">DROP 04</span>
         <h1 className="hero__title">
@@ -28,7 +27,6 @@ const Hero = () => {
         </svg>
       </div>
 
-      {/* Bloco inferior: produto */}
       <div className="hero__content-bottom">
         <h3 className="hero__subtitle">12 peças. tudo limitado.</h3>
         <p className="hero__description">
