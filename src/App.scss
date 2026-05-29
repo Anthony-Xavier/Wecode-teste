@@ -1,12 +1,11 @@
-@import "reset";
-@import "variables";
+@use "./styles/variables" as *;
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: $font-primary;
   margin: 0;
   padding: 0;
   color: #111;

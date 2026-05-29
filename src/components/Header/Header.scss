@@ -1,2 +1,144 @@
-// Header.scss
 @use "../../styles/variables" as *;
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $color-white;
+
+  &__topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 0.8rem 4rem 0.3rem;
+    font-size: 12px;
+    color: $color-black;
+    background: $color-gray;
+
+    span {
+      cursor: pointer;
+      padding-left: 1rem;
+      border-left: 1px solid $color-black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 144px;
+    height: auto;
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    padding: 1rem 4rem;
+    gap: 2rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0.8rem 1rem;
+      gap: 1rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+    padding-left: 4rem;
+
+    a {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $color-black;
+      text-decoration: none;
+      background-color: $color-yellow;
+      font-size: medium;
+      &:hover {
+        background: $color-yellow;
+      }
+    }
+    .header__nav-link--active {
+      background: $color-yellow;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: $color-white;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      z-index: 99;
+
+      &--open {
+        display: flex;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: auto;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 999px;
+    padding: 0.6rem 0.8rem;
+    background-color: $color-gray;
+
+    input {
+      border: none;
+      outline: none;
+      font-size: 0.85rem;
+      width: 150px;
+      height: 30px;
+      background: transparent;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__wishlist,
+  &__cart {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    color: $color-black;
+    &:hover {
+      opacity: 0.6;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
