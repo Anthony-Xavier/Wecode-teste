@@ -1,6 +1,6 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import Hero from "./sections/Hero";
+import Hero from "./sections/Hero/Hero";
 
 function App() {
   return (

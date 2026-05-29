@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.scss";
-import heroBg from "../assets/hero.png";
-import sol from "../assets/Image-64.png";
+import heroBg from "../../assets/hero.png";
+import sol from "../../assets/Image-64.png";
 
 const Hero = () => {
   return (
