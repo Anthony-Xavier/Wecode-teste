@@ -106,12 +106,12 @@
 
   &__quote {
     position: absolute;
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 3.5rem;
+    left: 3.5rem;
     color: $color-white;
     display: flex;
     flex-direction: column;
-    gap: 320px;
+    gap: 150px;
 
     &-text {
       font-size: 20px;
@@ -121,19 +121,19 @@
     }
 
     &-tcc {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
       margin: 0;
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     @media (max-width: $breakpoint-mobile) {
       bottom: 1rem;
       left: 1rem;
-      gap: 8px;
+      gap: 40px;
 
       &-text {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       &-tcc {
@@ -144,7 +144,7 @@
 
   &__footer {
     text-align: center;
-    padding: 2rem 0 1rem;
+    padding: 2.5rem 0 1rem;
 
     @media (max-width: $breakpoint-mobile) {
       padding: 1.5rem 0 0.5rem;
@@ -152,11 +152,11 @@
   }
 
   &__phrase {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 700;
     color: $color-purple;
-    margin: 0 0 0.8rem;
     line-height: 1.2;
+    margin: 0 0 0.4rem;
 
     @media (max-width: $breakpoint-mobile) {
       font-size: 22px;
@@ -166,8 +166,9 @@
   &__sub {
     font-size: 16px;
     color: $color-black;
-    margin: 0 0 1.5rem;
-
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0 0 1.2rem;
     @media (max-width: $breakpoint-mobile) {
       font-size: 13px;
     }
