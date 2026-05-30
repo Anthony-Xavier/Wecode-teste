@@ -1,0 +1,191 @@
+@use "../../styles/variables" as *;
+
+.tenis {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem 4rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+
+    > div img {
+      width: 118px;
+      height: 88px;
+      object-fit: contain;
+      opacity: 0.71;
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 700;
+    color: $color-purple;
+    margin: 0;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    border: 2px solid $color-black;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+    img {
+      width: 28px;
+      height: auto;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 70px;
+      height: 70px;
+      font-size: 0.5rem;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  &__quote {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    gap: 320px;
+
+    &-text {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    &-tcc {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      bottom: 1rem;
+      left: 1rem;
+      gap: 8px;
+
+      &-text {
+        font-size: 14px;
+      }
+
+      &-tcc {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1.5rem 0 0.5rem;
+    }
+  }
+
+  &__phrase {
+    font-size: 36px;
+    font-weight: 700;
+    color: $color-purple;
+    margin: 0 0 0.8rem;
+    line-height: 1.2;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 22px;
+    }
+  }
+
+  &__sub {
+    font-size: 16px;
+    color: $color-black;
+    margin: 0 0 1.5rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 13px;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    background-color: #f4614c;
+    color: $color-white;
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}

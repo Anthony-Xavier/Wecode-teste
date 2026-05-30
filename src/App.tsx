@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Hero from "./sections/Hero/Hero";
 import Manifesto from "./sections/Manifesto/Manifesto";
 import VideoBanner from "./sections/VideoBanner/VideoBanner";
+import Tenis from "./sections/Tenis/Tenis";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Manifesto />
       <VideoBanner />
+      <Tenis />
     </div>
   );
 }
