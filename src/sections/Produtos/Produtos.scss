@@ -1,0 +1,441 @@
+@use "../../styles/variables" as *;
+
+.produtos {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 6rem 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 3rem 0;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__main-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1302px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 1rem;
+    }
+  }
+
+  // ── GRID DE PRODUTOS ──
+  &__grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    overflow-x: auto;
+
+    scroll-snap-type: x overflow;
+
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    cursor: grab;
+    user-select: none;
+
+    &--dragging {
+      cursor: grabbing;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: 1rem;
+      margin-bottom: 3rem;
+      scroll-snap-type: x mandatory;
+      padding-right: 1rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 82vw;
+    }
+
+    flex: 0 0 calc(33.333% - 1.4rem);
+    scroll-snap-align: start;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 85vw;
+    }
+  }
+
+  &__image-wrapper {
+    background: $color-white;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__image-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    scroll-snap-align: start;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1rem;
+    }
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-black;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &--active {
+      background-color: $color-black;
+    }
+  }
+
+  &__carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $color-black;
+    color: $color-white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &--prev {
+      left: 0.5rem;
+    }
+    &--next {
+      right: 0.5rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none !important;
+    }
+  }
+
+  &__card:hover &__carousel-btn {
+    opacity: 1;
+  }
+
+  &__info {
+    padding: 1.5rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__tag {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: $color-coral-500;
+    text-transform: lowercase;
+    margin-bottom: 0.2rem;
+  }
+
+  &__name {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: $color-black;
+    line-height: 1.1;
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.02em;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__category,
+  &__cores {
+    font-size: 0.85rem;
+    color: #757575;
+    margin: 0;
+    line-height: 1.4;
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  &__cores {
+    margin-bottom: 1rem;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  &__preco {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: $color-black;
+
+    &--original {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+      text-decoration: line-through;
+    }
+  }
+
+  &__btn {
+    background-color: $color-coral-500;
+    color: $color-white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 2.2rem;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      transform 0.2s,
+      opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  // ── BANNER "SOLTO" RECOMPOSIÇÃO DE CAMADAS ──
+  &__solto-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 6rem auto;
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__img-solto {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__titulo-solto {
+    position: absolute;
+    top: 0%;
+    left: 1%;
+    font-size: 400px;
+    font-weight: 700;
+    line-height: 290px;
+    color: #ffffff57;
+    text-transform: none;
+    letter-spacing: -0.05em;
+    margin: 0;
+    z-index: 5;
+    user-select: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 90px;
+      line-height: 80px;
+      color: #ffffff57;
+    }
+  }
+
+  &__mascote {
+    position: absolute;
+    top: 26%;
+    left: 44%;
+    width: calc(60px + 10vw);
+    height: auto;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &__carinha {
+    position: absolute;
+    top: 7%;
+    right: 4%;
+    width: clamp(45px, 6vw, 85px);
+    height: auto;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  // ── BLOCO DA NEWSLETTER (EMAIL) ──
+  &__email-container {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      height: auto;
+      padding: 2.5rem 1.5rem;
+    }
+  }
+
+  &__email-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &__email-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.5rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      padding: 0;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__email-text {
+    font-size: clamp(1.2rem, 2.3vw, 2.1rem);
+    font-weight: 700;
+    color: $color-white;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.02em;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.15rem;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__email-form {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    width: 100%;
+    max-width: 538px;
+    height: 60px;
+    padding: 0.35rem;
+    border-radius: 0;
+
+    @media (max-width: $breakpoint-mobile) {
+      height: 50px;
+    }
+  }
+
+  &__email-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color-black;
+    letter-spacing: 0.05em;
+    width: 100%;
+
+    &::placeholder {
+      color: #a4a4a4;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__email-btn {
+    background-color: $color-coral-500;
+    color: $color-white;
+    border: none;
+    border-radius: 12px;
+    height: 100%;
+    padding: 0 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.95;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 1.5rem;
+      font-size: 0.95rem;
+      border-radius: 8px;
+    }
+  }
+}
