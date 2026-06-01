@@ -7,6 +7,7 @@ import Tenis from "./sections/Tenis/Tenis";
 import CampanhaBanner from "./sections/CampanhaBanner/CampanhaBanner";
 import Produtos from "./sections/Produtos/Produtos";
 import Sobre from "./sections/Sobre/Sobre";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <CampanhaBanner />
       <Produtos />
       <Sobre />
+      <Footer />
     </div>
   );
 }
