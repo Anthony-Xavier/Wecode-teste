@@ -4,6 +4,7 @@ import Hero from "./sections/Hero/Hero";
 import Manifesto from "./sections/Manifesto/Manifesto";
 import VideoBanner from "./sections/VideoBanner/VideoBanner";
 import Tenis from "./sections/Tenis/Tenis";
+import CampanhaBanner from "./sections/CampanhaBanner/CampanhaBanner";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Manifesto />
       <VideoBanner />
       <Tenis />
+      <CampanhaBanner />
     </div>
   );
 }
