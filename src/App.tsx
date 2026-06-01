@@ -6,6 +6,7 @@ import VideoBanner from "./sections/VideoBanner/VideoBanner";
 import Tenis from "./sections/Tenis/Tenis";
 import CampanhaBanner from "./sections/CampanhaBanner/CampanhaBanner";
 import Produtos from "./sections/Produtos/Produtos";
+import Sobre from "./sections/Sobre/Sobre";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Tenis />
       <CampanhaBanner />
       <Produtos />
+      <Sobre />
     </div>
   );
 }
