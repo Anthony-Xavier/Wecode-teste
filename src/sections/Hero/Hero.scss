@@ -59,7 +59,7 @@
 
   &__drop-tag {
     display: inline-block;
-    background-color: $color-yellow;
+    background-color: $color-yellow-500;
     color: $color-black;
     font-size: 0.75rem;
     font-weight: 700;
@@ -102,7 +102,7 @@
     }
 
     &--purple {
-      color: $color-purple;
+      color: $color-purple-500;
       display: block;
     }
   }
@@ -175,14 +175,14 @@
     @media (max-width: $breakpoint-mobile) {
       font-size: 14px;
       color: $color-white;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     }
   }
 
   &__footer-center {
     font-size: 24px;
     font-weight: 500;
-    color: $color-purple;
+    color: $color-purple-500;
     left: 50%;
     transform: translateX(-85%);
 
@@ -190,7 +190,7 @@
       font-size: 13px;
       display: block;
       color: $color-white;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
       transform: none;
       left: auto;
     }
@@ -207,7 +207,7 @@
       font-size: 11px;
       display: block;
       color: $color-white;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     }
   }
 }
