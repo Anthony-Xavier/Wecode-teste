@@ -200,15 +200,16 @@
 
   &__cta {
     display: inline-block;
-    background-color: #f4614c;
+    background-color: $color-coral-500;
     color: $color-white;
     padding: 0.7rem 2rem;
     border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 400;
     text-decoration: none;
     transition: opacity 0.2s;
     margin-top: 0.5rem;
+    font-family: $font-serif;
 
     &:hover {
       opacity: 0.85;

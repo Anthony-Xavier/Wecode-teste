@@ -176,12 +176,12 @@
 
   &__cta {
     display: inline-block;
-    background-color: #f4614c;
+    background-color: $color-coral-500;
     color: $color-white;
     padding: 0.6rem 1.8rem;
     border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     text-decoration: none;
     transition: opacity 0.2s;
 
