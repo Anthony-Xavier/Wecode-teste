@@ -1,3 +1,5 @@
+export type Categoria = "novidades" | "homem" | "mulher" | "tenis" | "acessorios";
+
 export interface Produto {
   id: number;
   modelo: string;
@@ -6,6 +8,7 @@ export interface Produto {
   ref: string;
   precoOriginal: number;
   precoPromocional?: number;
+  categorias: Categoria[];
 }
 
 export const PRODUTOS_MOCK: Produto[] = [
@@ -16,6 +19,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["P", "M", "G", "GG"],
     ref: "0001",
     precoOriginal: 80.0,
+    categorias: ["novidades", "homem", "mulher"],
   },
   {
     id: 2,
@@ -24,6 +28,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["P", "M", "G", "GG"],
     ref: "0002",
     precoOriginal: 80.0,
+    categorias: ["novidades", "homem", "mulher"],
   },
   {
     id: 3,
@@ -32,6 +37,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["P", "M", "G", "GG"],
     ref: "1001",
     precoOriginal: 99.0,
+    categorias: ["novidades", "homem"],
   },
   {
     id: 4,
@@ -41,6 +47,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     ref: "2002",
     precoOriginal: 110.0,
     precoPromocional: 79.9,
+    categorias: ["novidades", "homem", "mulher"],
   },
   {
     id: 5,
@@ -50,6 +57,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     ref: "5112",
     precoOriginal: 890.0,
     precoPromocional: 699.9,
+    categorias: ["novidades", "homem"],
   },
   {
     id: 6,
@@ -58,6 +66,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "0010",
     precoOriginal: 500.0,
+    categorias: ["novidades", "acessorios"],
   },
   {
     id: 7,
@@ -66,6 +75,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "0011",
     precoOriginal: 500.0,
+    categorias: ["novidades", "acessorios"],
   },
   {
     id: 8,
@@ -74,6 +84,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "4003",
     precoOriginal: 580.0,
+    categorias: ["novidades", "acessorios"],
   },
   {
     id: 9,
@@ -82,6 +93,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "4004",
     precoOriginal: 580.0,
+    categorias: ["novidades", "acessorios"],
   },
   {
     id: 10,
@@ -90,6 +102,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "9404",
     precoOriginal: 300.0,
+    categorias: ["novidades", "acessorios"],
   },
   {
     id: 11,
@@ -98,6 +111,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["Único"],
     ref: "2289",
     precoOriginal: 150.0,
+    categorias: ["novidades", "acessorios", "mulher"],
   },
   {
     id: 12,
@@ -106,6 +120,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["36", "37", "38", "39", "40", "41"],
     ref: "1878",
     precoOriginal: 1200.0,
+    categorias: ["novidades", "tenis"],
   },
   {
     id: 13,
@@ -115,6 +130,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     ref: "8126",
     precoOriginal: 379.0,
     precoPromocional: 299.9,
+    categorias: ["novidades", "tenis", "homem", "mulher"],
   },
   {
     id: 14,
@@ -123,6 +139,7 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["36", "37", "38", "39", "40", "41"],
     ref: "8127",
     precoOriginal: 379.0,
+    categorias: ["novidades", "tenis", "homem", "mulher"],
   },
   {
     id: 15,
@@ -131,5 +148,6 @@ export const PRODUTOS_MOCK: Produto[] = [
     tamanho: ["36", "37", "38", "39", "40", "41"],
     ref: "8235",
     precoOriginal: 699.9,
+    categorias: ["novidades", "tenis"],
   },
 ];

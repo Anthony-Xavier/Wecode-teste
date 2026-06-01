@@ -1,27 +1,25 @@
 import "./App.scss";
+import { Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header/Header";
-import Hero from "./sections/Hero/Hero";
-import Manifesto from "./sections/Manifesto/Manifesto";
-import VideoBanner from "./sections/VideoBanner/VideoBanner";
-import Tenis from "./sections/Tenis/Tenis";
-import CampanhaBanner from "./sections/CampanhaBanner/CampanhaBanner";
-import Produtos from "./sections/Produtos/Produtos";
-import Sobre from "./sections/Sobre/Sobre";
-import Footer from "./components/Footer/Footer";
+import MiniCart from "./components/MiniCart/MiniCart";
+import Home from "./pages/Home/Home";
+import Categoria from "./pages/Categoria/Categoria";
 
 function App() {
   return (
-    <div>
+    <CartProvider>
       <Header />
-      <Hero />
-      <Manifesto />
-      <VideoBanner />
-      <Tenis />
-      <CampanhaBanner />
-      <Produtos />
-      <Sobre />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/novidades" element={<Categoria />} />
+        <Route path="/homem" element={<Categoria />} />
+        <Route path="/mulher" element={<Categoria />} />
+        <Route path="/tenis" element={<Categoria />} />
+        <Route path="/acessorios" element={<Categoria />} />
+      </Routes>
+      <MiniCart />
+    </CartProvider>
   );
 }
 

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/loose.png";
 import carrinho from "../../assets/carrinho.png";
@@ -6,11 +7,20 @@ import coracao from "../../assets/coracao.png";
 import { CiMenuBurger } from "react-icons/ci";
 import { FiSearch, FiChevronRight } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import { useCart } from "../../context/CartContext";
 
-const navLinks = ["novidades.", "homem.", "mulher.", "tênis.", "acessórios."];
+const navLinks = [
+  { label: "novidades.", path: "/novidades" },
+  { label: "homem.", path: "/homem" },
+  { label: "mulher.", path: "/mulher" },
+  { label: "tênis.", path: "/tenis" },
+  { label: "acessórios.", path: "/acessorios" },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems, setIsOpen } = useCart();
+  const navigate = useNavigate();
 
   return (
     <header className="header">
@@ -21,13 +31,19 @@ const Header = () => {
       </div>
 
       <div className="header__main">
-        <img src={logo} alt="Loose Logo" className="header__logo" />
+        <img
+          src={logo}
+          alt="Loose Logo"
+          className="header__logo"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+        />
 
         <nav className="header__nav">
-          {navLinks.map((link) => (
-            <a key={link} href="#">
-              {link}
-            </a>
+          {navLinks.map(({ label, path }) => (
+            <NavLink key={path} to={path} className={({ isActive }) => isActive ? "header__nav-link--active" : undefined}>
+              {label}
+            </NavLink>
           ))}
         </nav>
 
@@ -41,8 +57,15 @@ const Header = () => {
             <img src={coracao} alt="Wishlist" />
           </button>
 
-          <button className="header__cart" aria-label="Carrinho">
+          <button
+            className="header__cart"
+            aria-label="Carrinho"
+            onClick={() => setIsOpen(true)}
+          >
             <img src={carrinho} alt="Carrinho" />
+            {totalItems > 0 && (
+              <span className="header__cart-badge">{totalItems}</span>
+            )}
           </button>
 
           {/* hamburger só aparece no mobile via CSS */}
@@ -71,10 +94,10 @@ const Header = () => {
           </div>
 
           <nav className="header__mobile-nav">
-            {navLinks.map((link) => (
-              <a key={link} href="#">
-                {link} <FiChevronRight size={18} />
-              </a>
+            {navLinks.map(({ label, path }) => (
+              <NavLink key={path} to={path} onClick={() => setMenuOpen(false)}>
+                {label} <FiChevronRight size={18} />
+              </NavLink>
             ))}
           </nav>
 
